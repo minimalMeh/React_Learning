@@ -15,7 +15,7 @@ class SomeComponent extends Component {
     }
 }
 
-export default class RefSample extends Component {
+export class Ref extends Component {
     textInput = React.createRef<HTMLInputElement>();
     componentTextInput = React.createRef<SomeComponent>();
 
