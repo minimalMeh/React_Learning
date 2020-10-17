@@ -6,7 +6,7 @@ export class Clock extends React.Component<{}, {date: Date}> {
 
     constructor(props: any) {
         super(props);
-        this.state = {date: new Date()}; //начальное состояние в переменной this.state
+        this.state = {date: new Date()};
     }
 
     componentDidMount() {

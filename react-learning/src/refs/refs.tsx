@@ -5,35 +5,30 @@ class SomeComponent extends Component {
     private inputRef = React.createRef<HTMLInputElement>();
 
     setValue() {
-        this.inputRef?.current?.focus();
-        const node = this.inputRef?.current;
-        if (node) {
-            node.value ="00";
-        }
+        this.inputRef!.current!.value = "after mount";
     }
 
     render() {
         return (
-            <input ref={this.inputRef} value="123" />
+            <input ref={this.inputRef} value="initial" />
         );
     }
 }
 
 export default class RefSample extends Component {
-    textInput = React.createRef();
-    componentTextInput = React.createRef();
-
+    textInput = React.createRef<HTMLInputElement>();
+    componentTextInput = React.createRef<SomeComponent>();
 
     componentDidMount = () => {
-        (this.textInput.current as any).value = 200;
-        (this.componentTextInput.current as SomeComponent).setValue();
+        this.textInput!.current!.value = "after mount";
+        this.componentTextInput!.current!.setValue();
     }
 
     render() {
         return (
             <div>
-                <input value="456" ref={this.textInput as any} />
-                <SomeComponent ref={this.componentTextInput as any}/>                    
+                <input value="initial" ref={this.textInput} />
+                <SomeComponent ref={this.componentTextInput}/>                    
             </div>
         );
     }
