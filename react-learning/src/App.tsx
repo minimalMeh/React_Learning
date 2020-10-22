@@ -5,6 +5,7 @@ import { Clock } from './states/Clock';
 import { ToggleButton } from './states/ToggleButton';
 import { LoginControl } from './conditional_rendering/LoginControl';
 import { NumberList } from './lists/NumberList';
+import { NameForm, EssayForm } from './forms/NameForm';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <ToggleButton />
       <LoginControl />
       <NumberList numbers={[1, 2, 3]}/>
+      <NameForm />
+      <EssayForm />
     </div>
   );
 }
